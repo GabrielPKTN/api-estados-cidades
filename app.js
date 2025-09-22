@@ -41,7 +41,7 @@ app.get('/v1/estados/', (request, response) => {
     
     // Pesquisa na função de estados
     let estados = dados.getAllEstados()
-    
+
     // Retorna o status code e JSON
     response.status(estados.status_code).json(estados)
     
@@ -64,7 +64,7 @@ app.get('/v1/capital/:uf', (request, response) => {
 })
 
 
-app.get('/v1/estados/', (request, response) => {
+app.get('/v1/regiao/estados/', (request, response) => {
     
     let estados = dados.getEstadosByRegiao(request.query.regiao)
 
