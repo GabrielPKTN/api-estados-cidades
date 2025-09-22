@@ -60,11 +60,33 @@ app.get('/v1/capital/:uf', (request, response) => {
     let capital = dados.getCapitalBySigla(request.params.uf)
 
     response.status(capital.status_code).json(capital)
-    
+
 })
 
 
+app.get('/v1/estados/', (request, response) => {
+    
+    let estados = dados.getEstadosByRegiao(request.query.regiao)
 
+    response.status(estados.status_code).json(estados)
+
+})
+
+
+app.get('/v1/capitais/', (request, response) => {
+    let capitais = dados.getVerifyCapitaisDoPais()
+
+    response.status(capitais.status_code).json(capitais)
+})
+
+
+app.get('/v1/cidades/:uf', (request, reponse) => {
+
+    let cidades = dados.getCidadesBySigla(request.params.uf)
+
+    reponse.status(cidades.status_code).json(cidades)
+
+})
 
 // Start na API
 app.listen(PORT, () => {

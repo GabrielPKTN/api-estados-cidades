@@ -181,7 +181,7 @@ const getVerifyCapitaisDoPais = () => {
 
     })
 
-    console.log(message)
+    return message
 }
 
 // Retorna uma lista de cidades do estado pela sigla
