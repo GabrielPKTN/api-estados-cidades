@@ -136,7 +136,8 @@ const getEstadosByRegiao = (regiao) => {
     result = dados.listaDeEstados.estados
     .find(estados => estados.regiao == regiao) ? message : MESSAGE_ERROR
 
-    return message
+
+    return result
 }
 
 // Retorna informações dos estados que foram a capital do país, e qual é
@@ -186,6 +187,8 @@ const getVerifyCapitaisDoPais = () => {
 // Retorna uma lista de cidades do estado pela sigla
 const getCidadesBySigla = (sigla) => {
     
+    sigla = sigla.toUpperCase()
+
     let message = {
         status: true,
         status_code: 200,
@@ -216,15 +219,19 @@ const getCidadesBySigla = (sigla) => {
 
     })
     
-    return message
+    result = dados.listaDeEstados.estados
+    .find(estados => estados.sigla === sigla) ? message : MESSAGE_ERROR
+
+    return result
+
 }
 
 // getAllEstados()
 // console.log(getEstadoBySigla('po'))
 // console.log(getCapitalBySigla('po'))
-console.log(getEstadosByRegiao('Norteste'))
-// getVerifyCapitaisDoPais()
-// getCidadesBySigla('SP')
+// console.log(getEstadosByRegiao('Sudeste'))
+// console.log(getVerifyCapitaisDoPais())
+// console.log(getCidadesBySigla('ac'))
 
 module.exports = {
     getAllEstados,
