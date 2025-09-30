@@ -9,7 +9,7 @@ Esta API oferece endpoints para consultar dados geográficos do Brasil, incluind
 ### 1. Obter um estado pela sigla
 Retorna informações detalhadas de um estado, como nome, capital e região, a partir de sua sigla.
 
-* **URL:** `/getEstadoBySigla`
+* **URL:** `/v1/estados/:uf`
 * **Método:** `GET`
 * **Parâmetros de consulta:** `sigla` (obrigatório, ex: `SP`)
 * **Resposta de sucesso (200 OK):**
@@ -30,7 +30,7 @@ Retorna informações detalhadas de um estado, como nome, capital e região, a p
 ### 2. Obter a capital de um estado pela sigla
 Retorna a capital de um estado a partir de sua sigla.
 
-* **URL:** `/getCapitalBySigla`
+* **URL:** `/v1/capital/:uf`
 * **Método:** `GET`
 * **Parâmetros de consulta:** `sigla` (obrigatório, ex: `RJ`)
 * **Resposta de sucesso (200 OK):**
@@ -50,7 +50,7 @@ Retorna a capital de um estado a partir de sua sigla.
 ### 3. Obter todos os estados de uma região
 Lista todos os estados que pertencem a uma determinada região.
 
-* **URL:** `/getEstadosByRegiao`
+* **URL:** `/v1/regiao/estados/?regiao=Sul`
 * **Método:** `GET`
 * **Parâmetros de consulta:** `regiao` (obrigatório, ex: `Sul`)
 * **Resposta de sucesso (200 OK):**
@@ -79,7 +79,7 @@ Lista todos os estados que pertencem a uma determinada região.
 ### 4. Verificar as capitais do país
 Retorna informações sobre as cidades que já foram capitais do Brasil, incluindo a atual.
 
-* **URL:** `/getVerifyCapitaisDoPais`
+* **URL:** `/v1/capitais/`
 * **Método:** `GET`
 * **Parâmetros de consulta:** Nenhum
 * **Resposta de sucesso (200 OK):**
@@ -116,7 +116,7 @@ Retorna informações sobre as cidades que já foram capitais do Brasil, incluin
 ### 5. Obter cidades de um estado pela sigla
 Retorna uma lista completa das cidades de um estado específico, incluindo a contagem total.
 
-* **URL:** `/getCidadesBySigla`
+* **URL:** `/v1/cidades/:uf`
 * **Método:** `GET`
 * **Parâmetros de consulta:** `sigla` (obrigatório, ex: `MG`)
 * **Resposta de sucesso (200 OK):**
@@ -140,7 +140,7 @@ Retorna uma lista completa das cidades de um estado específico, incluindo a con
 ### 6. Obter todos os estados
 Retorna uma lista de todas as siglas de estados do Brasil e a quantidade total.
 
-* **URL:** `/getAllEstados`
+* **URL:** `/v1/estados`
 * **Método:** `GET`
 * **Parâmetros de consulta:** Nenhum
 * **Resposta de sucesso (200 OK):**
